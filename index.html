@@ -56,7 +56,7 @@ if (location.search.includes("embed")){
 } else {
     const worker = new Worker("js/share.js");
     debounce(function(){worker.postMessage(text.value)},500) //escape strings to preserve integrity?
-    console.log(text.value)
+    worker.postMessage(text.value)
 
     self.onmessage = function (e) {
       window.copyText = e.data;
