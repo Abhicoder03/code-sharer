@@ -1,0 +1,193 @@
+:root {
+--dark-blue: darkblue;
+--black: black;
+--blue: blue;
+--grey: grey;
+--dim-grey: dimgrey;
+--transform: scale(1.02) translate(0px, 2px) skew(1deg, 0deg);
+--base-size: 25px;
+--zero: 0;
+--two: 2px;
+--trans: transparent;
+--twenty-one: 21px;
+--ten: 10px;
+--three: 3px;
+--one: 1px;
+--twenty-three: 23px;
+}
+body {
+  background-color: #151419;
+}
+@font-face {
+font-family: "Font1";
+font-display: swap;
+src: url("../fonts/font1")
+}
+@font-face {
+font-family: "Font2";
+font-display: swap;
+src: url("../fonts/font2")
+}
+@font-face {
+font-family: "Hack";
+font-display: swap;
+src: url("../fonts/hack")
+}
+main, textarea{
+font-family: "Hack";
+direction: ltr;
+padding: 10px;
+display: block;
+margin: 0 auto;
+display: block
+}
+
+main{
+  box-shadow: 0px 0px 10px white;
+  height: 300px;
+  max-width: 90%;
+  min-width: 80%;
+  transition: .5s;
+
+}
+
+textarea {
+  font-size: 3.0vh;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  background-color: #f96d9b;
+  background-image: linear-gradient(315deg, #f96d9b 0%,#f6d327 99%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  caret-color: #F7BB97;
+  border: none;
+  resize: none;
+  height: 270px;
+  min-width: 95%
+}
+textarea:focus{
+  outline: #F7BB97;
+}
+textarea::selection{
+  background-color: darkred;
+  -webkit-background-clip: none;
+  -moz-background-clip: none;
+  -webkit-text-fill-color: ivory;
+  -moz-text-fill-color: ivory;
+}
+main:hover {
+box-shadow: 0 0 20px white;
+border-radius: var(--three);
+}
+h1,h2,h3,p {
+font-family: "Hack";
+margin: 0 auto;
+text-align: center;
+}
+h2 {
+margin-top: 2px;
+font-size: 1.2em;
+color: lightgrey;
+}
+.block::after {
+    content: "";
+    display: block;
+    background: var(--block-shadow-color);
+    border: 3px solid var(--block-text-color);
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 0;
+    z-index: -2;
+    transition: transform 0.2s;
+}
+.block::before {
+    content: "";
+    background: var(--block-background-color);
+    border: 3px solid var(--block-text-color);
+    border-radius: 3px;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.block.fixed {
+  cursor: initial;
+}
+.block {
+    display: block;
+    color: var(--block-text-color);
+    border: 3px solid var(--block-text-color);
+    border-radius: 3px;
+    padding: 4px 8px;
+    background: var(--block-background-color);
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    top: -2px;
+    left: -2px;
+    transition: transform 0.2s;
+    margin: 8px 6px 10px 6px;
+    z-index: 1;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    --block-text-color: #f8f8f8;
+    --block-background-color: #222;
+    --block-accent-color: #f2d12e;
+    --block-shadow-color: #555;
+}
+button{font-size: 1.7vw;}
+button:hover::after, button:focus::after {transform: translate(-2px, -3px);}
+button:hover, button:focus {transform: translate(2px, 2px);}
+h1{
+font-family: -apple-system;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

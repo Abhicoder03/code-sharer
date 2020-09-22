@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Color Gists"/>
+<meta name="application-name" content="Color Gists"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Color Gists"/>
+<meta name="twitter:description" content="Like Github Gists, but colorful."/>
+<meta name="twitter:image" content="/images/banner.png" />
+<meta name="og:title" content="Color Gists" />
+<meta name="og:description" content="Like Github Gists, but colorful."/>
+<meta name="og:image" content="images/banner.png" />
+<meta name="theme-color" content="#121212"/>
+<title> Color Gists | Github Gists, but colorful.</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+<link rel="preload" as="style" href="css/main.css"/>
+<link rel="stylesheet" href="css/main.css">
+</head>
+  <body>
+<h1> <span class="block">color gists 🎨 like github gists, but colorful.</span> </h1>
+<h2> Share colorful snippets of code that others can copy and paste. </h2> <br>
+<main><div class="window-controls"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></div>
+  <textarea id="type" spellcheck="false">
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw-test/sw.js', {scope: './sw-test/'})
+    .then((reg) => {
+      // service worker registration worked
+      console.log('Registration succeeded. Scope is ' + reg.scope);
+    }).catch((error) => {
+      // service worker registration failed
+      console.log('Registration failed with ' + error);
+    });
+   }
+</textarea></main>
+<br><center><button id="copy" class="block">copy embed link</button></center>
+<br><br><center><a href="https://github.com/genderev/color-gists"><img src="images/github.png"></a></center>
+<script>
+
+const text = document.getElementById("type");
+
+window.addEventListener('load', (event) => {
+
+if (location.search.includes("embed")){
+    const worker = new Worker("js/embed.js");
+    worker.postMessage(location.search);
+    console.log(location.search)
+
+    self.onmessage - function (e){
+      text.innerText(e.data); //escape strings to preserve integrity?
+    }
+} else {
+    const worker = new Worker("js/share.js");
+    debounce(function(){worker.postMessage(text.value)},500) //escape strings to preserve integrity?
+    console.log(text.value)
+
+    self.onmessage = function (e) {
+      window.copyText = e.data;
+    }
+
+    function myFunction() {
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      var tooltip = document.getElementById("myTooltip");
+      tooltip.innerHTML = "Copied: " + copyText.value;
+    }
+    document.getElementById("copy").addEventListener("click", myFunction);
+  }
+
+  function debounce (fn, delay) {
+    var timeoutID = null
+    return function () {
+      clearTimeout(timeoutID)
+      var args = arguments
+      var that = this
+      timeoutID = setTimeout(function () {
+        fn.apply(that, args)
+      }, delay)
+    }
+  }
+});
+
+</script>
+</body>
+</html>
