@@ -1,7 +1,7 @@
-importScripts("compress.js")
+const encoder = new TextEncoder()
 
 self.onmessage = function (e) {
-  const stringView = StringView.from(e.data);
-  const link = stringView.join("+")
+const view = encoder.encode(e.data)
+  const link = view.join("+")
   console.log(self.location + "?embed=" + link)
 }
