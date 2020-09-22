@@ -9,6 +9,9 @@ function str2ab(str) {
 
 self.onmessage = function (e) {
 const view = str2ab(e.data)
-  const link = view.join("+")
-  console.log(self.location + "?embed=" + link)
+console.log(typeof view)
+console.log(view)
+
+  // const link = view.join("+")
+  // console.log(self.location + "?embed=" + link)
 }
