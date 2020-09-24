@@ -37,7 +37,7 @@ const text = document.getElementById("type");
 
 window.addEventListener('load', (event) => {
 
-if (location.hash){
+if (location.hash.length!===0){
     const worker = new Worker("js/embed.js");
     worker.postMessage(location.hash);
     console.log(location.hash)
