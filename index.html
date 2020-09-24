@@ -60,8 +60,6 @@ if (location.hash.includes("embed")){
 } else {
     const worker = new Worker("js/share.js");
     debounce(function(){worker.postMessage(text.value)},500)
-    worker.postMessage(text.value)
-
 
     self.onmessage = function (e) {
       window.copyText = e.data;
