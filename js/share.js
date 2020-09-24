@@ -27,6 +27,6 @@ console.log(typeof lz)
 // console.log(link)
 // console.log(typeof link)
 
-self.postMessage(link)
+// self.postMessage(link)
 
 }
