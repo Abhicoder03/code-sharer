@@ -1,7 +1,6 @@
 importScripts("lzma-c.js");
 
-var test = LZMA.compress("hkdk kjl
-  jkk ")
+var test = LZMA.compress("hkdk kjl jkk ")
 
 console.log(typeof test)
 
