@@ -65,6 +65,7 @@ if (location.hash.includes("embed")){
 
     self.onmessage = function (e) {
       window.copyText = e.data;
+      document.getElementById("copy").addEventListener("click", myFunction);
     }
 
     function myFunction() {
@@ -72,9 +73,9 @@ if (location.hash.includes("embed")){
       copyText.setSelectionRange(0, 99999);
       document.execCommand("copy");
       var tooltip = document.getElementById("myTooltip");
-      tooltip.innerHTML = "Copied!" 
+      tooltip.innerHTML = "Copied!"
     }
-    document.getElementById("copy").addEventListener("click", myFunction);
+
   }
 
   function debounce (fn, delay) {
