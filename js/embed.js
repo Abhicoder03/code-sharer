@@ -13,10 +13,10 @@ console.log(typeof e.data)
 const link = btoa(e.data)
 console.log(typeof link)
 
-LZMA.decompress(link, on_finish(result, error) {
-  console.log(result)
-  self.postMessage(result)
-});
-
+LZMA.decompress(link, 9, function(result, error) {
+    if (error) console.error(error);
+    console.log(result)
+    self.postMessage(result)
+  });
 
 }
