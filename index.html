@@ -68,7 +68,7 @@ if (location.hash.length!==0){
       ,500)
     }
 
-    text.addEventListener("mousedown",sendToWorker)
+    text.addEventListener("mouseup",sendToWorker)
 
     self.onmessage = function (e) {
       window.copyText = e.data;
