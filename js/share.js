@@ -1,15 +1,20 @@
 importScripts("lzma-c.js");
 
+var test = LZMA.compress("hkdk kjl
+  jkk ")
+
+console.log(typeof test)
+
 
 self.onmessage = function (e) {
 
 //the message here is code
 
 // to LZMA
-LZMA.compress(e.data, on_finish(result, error) {
-  console.log(result)
-  self.lz = result;
-});
+// LZMA.compress(e.data, on_finish(result, error) {
+//   console.log(result)
+//   self.lz = result;
+// });
 // to base64
 console.log(typeof lz)
 const conv = atob(lz)
