@@ -59,7 +59,7 @@ if (location.hash.includes("embed")){
     }
 } else {
     const worker = new Worker("js/share.js");
-    debounce(function(){worker.postMessage(text.value)},500) 
+    debounce(function(){worker.postMessage(text.value)},500)
     worker.postMessage(text.value)
 
 
@@ -89,6 +89,11 @@ if (location.hash.includes("embed")){
     }
   }
 });
+
+window.onhashchange = function(e) {
+   console.log("hash", e);
+   location.reload();
+ };
 
 </script>
 </body>
