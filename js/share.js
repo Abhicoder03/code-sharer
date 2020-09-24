@@ -11,11 +11,11 @@ console.log(e.data)
 // to LZMA
 LZMA.compress(e.data, 9, function(result, error) {
     if (error) console.error(error);
-    console.log(result)
+    self.lz = btoa(String.fromCharCode.apply(null, new Uint8Array(result)));
   });
 // to base64
-
-// console.log(typeof lz)
+console.log(lz)
+console.log(typeof lz)
 // const conv = atob(lz)
 
 // construct url from base64
