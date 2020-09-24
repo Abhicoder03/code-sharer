@@ -22,9 +22,9 @@
 <link rel="stylesheet" href="css/main.css">
 </head>
   <body>
-<h1> <span class="block">color gists 🎨 like github gists, but colorful.</span> </h1>
-<h2> Share colorful snippets of code that others can copy and paste. </h2> <br>
-<main><div class="window-controls"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></div>
+<h1> <span class="edit block">color gists 🎨 like github gists, but colorful.</span> </h1>
+<h2 class="edit"> Share colorful snippets of code that others can copy and paste. </h2> <br>
+<main><div class="fake-buttons"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></div>
   <textarea id="type" spellcheck="false">
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw-test/sw.js', {scope: './sw-test/'})
@@ -37,26 +37,31 @@
     });
    }
 </textarea></main>
-<br><center><button id="copy" class="block">copy embed link</button></center>
-<br><br><center><a href="https://github.com/genderev/color-gists"><img src="images/github.png"></a></center>
+<br><center><button id="copy" class="block edit">copy embed link</button></center>
+<br><br><center class="edit"><a href="https://github.com/genderev/color-gists"><img src="images/github.png"></a></center>
 <script>
 
 const text = document.getElementById("type");
 
 window.addEventListener('load', (event) => {
 
-if (location.search.includes("embed")){
+if (location.hash.includes("embed")){
     const worker = new Worker("js/embed.js");
-    worker.postMessage(location.search);
-    console.log(location.search)
+    worker.postMessage(location.hash);
+    console.log(location.hash)
 
-    self.onmessage - function (e){
-      text.innerText(e.data); //escape strings to preserve integrity?
+  for (let element of document.getElementsByClassName("edit")){
+   element.style.display="none";
+  }
+
+    self.onmessage = function (e){
+      text.innerText(e.data);
     }
 } else {
     const worker = new Worker("js/share.js");
-    debounce(function(){worker.postMessage(text.value)},500) //escape strings to preserve integrity?
+    debounce(function(){worker.postMessage(text.value)},500) 
     worker.postMessage(text.value)
+
 
     self.onmessage = function (e) {
       window.copyText = e.data;
