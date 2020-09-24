@@ -25,6 +25,6 @@ LZMA.compress(e.data, 9, function(result, error) {
 // console.log(link)
 // console.log(typeof link)
 
-self.postMessage(link)
+// self.postMessage(link)
 
 }
