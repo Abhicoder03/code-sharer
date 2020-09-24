@@ -9,12 +9,12 @@ self.onmessage = function (e) {
 //the message here is code
 console.log(e.data)
 // to LZMA
-LZMA.compress(e.data, 9, function(result, error) {
+self.lz = LZMA.compress(e.data, 9, function(result, error) {
     if (error) console.error(error);
-    console.log(btoa(String.fromCharCode.apply(null, new Uint8Array(result))))
+    return btoa(String.fromCharCode.apply(null, new Uint8Array(result)))
   });
 // to base64
-
+console.log(lz)
 // const conv = atob(lz)
 
 // construct url from base64
