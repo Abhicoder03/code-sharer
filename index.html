@@ -26,7 +26,7 @@
 <h2 class="edit"> Share colorful snippets of code that others can copy and paste. </h2> <br>
 <!-- TO DO: add test for making sure default code snippet stays the same -->
 <main><div class="fake-buttons"><svg xmlns="http://www.w3.org/2000/svg" width="54" height="14" viewBox="0 0 54 14"><g fill="none" fill-rule="evenodd" transform="translate(1 1)"><circle cx="6" cy="6" r="6" fill="#FF5F56" stroke="#E0443E" stroke-width=".5"></circle><circle cx="26" cy="6" r="6" fill="#FFBD2E" stroke="#DEA123" stroke-width=".5"></circle><circle cx="46" cy="6" r="6" fill="#27C93F" stroke="#1AAB29" stroke-width=".5"></circle></g></svg></div>
-  <textarea id="type" spellcheck="false">
+  <textarea id="type" spellcheck="false" onkeyup="sendToWorker()">
     if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw-test/sw.js', {scope: './sw-test/'})
     .then((reg) => {
@@ -68,7 +68,6 @@ if (location.hash.length!==0){
       ,500)
     }
 
-    text.addEventListener("mouseup",sendToWorker)
 
     self.onmessage = function (e) {
       window.copyText = e.data;
