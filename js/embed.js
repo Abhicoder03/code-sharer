@@ -1,5 +1,14 @@
 importScripts("lzma-d.js");
 
+function base64ToByteArray(base64) {
+  var raw = atob(base64);
+  var rawLength = raw.length;
+  var array = new Uint8Array(new ArrayBuffer(rawLength));
+  for(i = 0; i < rawLength; i++) {
+    array[i] = raw.charCodeAt(i);
+  }
+  return array;
+}
 
 self.onmessage = function (e) {
 
