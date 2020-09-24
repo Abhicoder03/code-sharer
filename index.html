@@ -58,7 +58,7 @@ if (location.hash.includes("embed")){
       ,500)
     }
 
-    text.addEventListener("keyup",sendToWorker)
+    text.addEventListener("mousedown",sendToWorker)
 
     self.onmessage = function (e) {
       window.copyText = e.data;
