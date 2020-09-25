@@ -1,4 +1,0 @@
-- name: Dynamic Application Security Testing (DAST) with Nuclei
-uses: secopslab/nuclei-action@v1
-
-
