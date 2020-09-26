@@ -27,7 +27,7 @@ self.onmessage = function (e) {
 //the message here is a url hash
 
 
-const array = base64ToByteArray(e.data)
+const array = base64ToByteArray(e.data.replace("#",""))
 
  LZMA.decompress(array, function(result, error) {
    if (!(typeof result === 'string')) result = new Uint8Array(result)
