@@ -16,10 +16,12 @@ function decompressDataURI(dataURI) {
   var base64Index = dataURI.indexOf(LZMA64_MARKER);
   if (base64Index > 0) {
     var base64 = dataURI.substring(base64Index + LZMA64_MARKER.length);
-    console.log(base64)
+    console.log("if: ", base64)
     // zipToString(base64, function(result) {
     //     self.decoded = (dataURI.substring(0, base64Index) + BASE64_MARKER + '' + data.split(',')[1])
     // })
+  } else {
+    console.log("else: ", base64)
   }
 }
 
@@ -38,7 +40,7 @@ self.onmessage = function (e) {
 //the message here is a url hash
 
 
-// decompressDataURI(e.data);
+decompressDataURI(e.data);
 // const array = base64ToByteArray(decoded)
 //
 //  LZMA.decompress(array, function(result, error) {
