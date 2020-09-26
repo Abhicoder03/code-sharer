@@ -2,6 +2,9 @@
 
 const text = document.getElementById("type");
 
+function sendToWorker(){debounce(worker.postMessage(text.value),500);}
+
+
 window.addEventListener('load', (event) => {
 
 if (location.hash.length!==0){
@@ -15,15 +18,11 @@ if (location.hash.length!==0){
 
     self.onmessage = function (e){
       text.innerText(e.data);
-    }
+    };
 } else {
     const worker = new Worker("js/share.js");
 
-    function sendToWorker(){
-    debounce(
-        worker.postMessage(text.value)
-      ,500)
-    }
+    
 
     text.addEventListener("keypress",sendToWorker)
 
@@ -41,14 +40,14 @@ if (location.hash.length!==0){
   }
 
   function debounce (fn, delay) {
-    var timeoutID = null
+    var timeoutID = null;
     return function () {
-      clearTimeout(timeoutID)
-      var args = arguments
-      var that = this
+      clearTimeout(timeoutID);
+      var args = arguments;
+      var that = this;
       timeoutID = setTimeout(function () {
-        fn.apply(that, args)
-      }, delay)
+        fn.apply(that, args);
+      }, delay);
     }
   }
 });
