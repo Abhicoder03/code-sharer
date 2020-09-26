@@ -25,7 +25,7 @@ if (location.hash.length!==0){
 
     worker.onmessage = function (e) {
       window.copyText = e.data;
-      document.getElementById("copy").addEventListener("click", myFunction);
+      document.getElementById("copy").addEventListener("click", clip);
     }
   }
 
