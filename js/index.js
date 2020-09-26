@@ -2,6 +2,7 @@
 
 const text = document.getElementById("type");
 
+<<<<<<< Updated upstream
 function sendToWorker(){debounce(worker.postMessage(text.value),500);}
 
 function clip() {
