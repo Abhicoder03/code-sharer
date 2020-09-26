@@ -6,22 +6,22 @@ const text = document.getElementById("type");
 window.addEventListener('load', (event) => {
 
 if (location.hash.length!==0){
-    const worker = new Worker("js/embed.js");
-    worker.postMessage(location.hash);
+    const work = new Worker("js/embed.js");
+    work.postMessage(location.hash);
     console.log(location.hash)
 
   for (let element of document.getElementsByClassName("edit")){
    element.style.display="none";
   }
 
-    self.onmessage = function (e){
+    work.onmessage = function (e){
       text.innerText(e.data);
     };
 } else {
 
     text.addEventListener("keypress",sendToWorker)
 
-    self.onmessage = function (e) {
+    worker.onmessage = function (e) {
       window.copyText = e.data;
       document.getElementById("copy").addEventListener("click", myFunction);
     }
