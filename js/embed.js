@@ -29,9 +29,7 @@ function decompressDataURI(dataURI, preamble, callback) {
         self.decoded = (dataURI.substring(0, base64Index) + BASE64_MARKER + (preamble || '') + data.split(',')[1])
       })
     })
-  } else {
-    callback(dataURI)
-  }
+  } 
 }
 
 function base64ToByteArray(base64) {
