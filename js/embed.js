@@ -11,22 +11,15 @@ function zipToString(data) {
   });
 }
 
-function stringToData(string) {
-  if (!string.length) return callback("");
-  var a = new FileReader();
-  // a.onload = function(e) { callback(e.target.result.replace()) }
-  a.readAsDataURL(new Blob([string], {encoding:"UTF-8",type:"text/html;charset=UTF-8"}));
-}
 
 function decompressDataURI(dataURI) {
   var base64Index = dataURI.indexOf(LZMA64_MARKER);
   if (base64Index > 0) {
     var base64 = dataURI.substring(base64Index + LZMA64_MARKER.length);
-    zipToString(base64, function(result) {
-      stringToData(result, function(data) {
-        self.decoded = (dataURI.substring(0, base64Index) + BASE64_MARKER + '' + data.split(',')[1])
-      })
-    })
+    console.log(base64)
+    // zipToString(base64, function(result) {
+    //     self.decoded = (dataURI.substring(0, base64Index) + BASE64_MARKER + '' + data.split(',')[1])
+    // })
   }
 }
 
@@ -45,14 +38,14 @@ self.onmessage = function (e) {
 //the message here is a url hash
 
 
-decompressDataURI(e.data);
-const array = base64ToByteArray(decoded)
-
- LZMA.decompress(array, function(result, error) {
-   if (!(typeof result === 'string')) result = new Uint8Array(result)
-   if (error) console.error(error);
-   console.log("Decoded result is:" + result)
- });
+// decompressDataURI(e.data);
+// const array = base64ToByteArray(decoded)
+//
+//  LZMA.decompress(array, function(result, error) {
+//    if (!(typeof result === 'string')) result = new Uint8Array(result)
+//    if (error) console.error(error);
+//    console.log("Decoded result is:" + result)
+//  });
 
 
 
