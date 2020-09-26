@@ -34,8 +34,8 @@ const text = document.getElementById("type");
          text.value = text.value.substring(0, text.getCaretPosition()) + "    " + text.value.substring(text.getCaretPosition(), text.value.length);
          text.setCaretPosition(newCaretPosition);
          return false;
-     }
-   }
+     };
+   };
 
  function clip() {
      navigator.clipboard.writeText(copyText);
@@ -49,7 +49,7 @@ const text = document.getElementById("type");
  if (location.hash.length!==0){
      const work = new Worker("js/embed.js");
      work.postMessage(location.hash);
-     console.log(location.hash)
+     console.log(location.hash);
 
    for (let element of document.getElementsByClassName("edit")){
     element.style.display="none";
@@ -62,7 +62,7 @@ const text = document.getElementById("type");
 
      const worker = new Worker("js/share.js");
 
-     text.addEventListener("keypress",setTimeout(function(){worker.postMessage(text.value);}, 3000))
+     text.addEventListener("keypress",setTimeout(function(){worker.postMessage(text.value)}, 3000));
 
 
      worker.onmessage = function (e) {
