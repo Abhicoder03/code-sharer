@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "eslint js/index.js && pa11y ./index.html"
+    "test": "pa11y ./index.html"
   },
   "repository": {
     "type": "git",
