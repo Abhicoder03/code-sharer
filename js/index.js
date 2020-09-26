@@ -9,7 +9,7 @@ function clip() {
   copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
   var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied!"
+  tooltip.innerHTML = "Copied!";
 }
 
 window.addEventListener('load', (event) => {
