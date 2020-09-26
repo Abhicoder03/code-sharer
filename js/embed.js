@@ -18,13 +18,13 @@ function stringToData(string) {
   a.readAsDataURL(new Blob([string], {encoding:"UTF-8",type:"text/html;charset=UTF-8"}));
 }
 
-function decompressDataURI(dataURI, preamble) {
+function decompressDataURI(dataURI) {
   var base64Index = dataURI.indexOf(LZMA64_MARKER);
   if (base64Index > 0) {
     var base64 = dataURI.substring(base64Index + LZMA64_MARKER.length);
     zipToString(base64, function(result) {
       stringToData(result, function(data) {
-        self.decoded = (dataURI.substring(0, base64Index) + BASE64_MARKER + (preamble || '') + data.split(',')[1])
+        self.decoded = (dataURI.substring(0, base64Index) + BASE64_MARKER + '' + data.split(',')[1])
       })
     })
   }
