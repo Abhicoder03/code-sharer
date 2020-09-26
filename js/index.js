@@ -2,15 +2,6 @@
 
 const text = document.getElementById("type");
 
-function sendToWorker(){debounce(worker.postMessage(text.value),500);}
-
-function clip() {
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  var tooltip = document.getElementById("myTooltip");
-  tooltip.innerHTML = "Copied!";
-}
 
 window.addEventListener('load', (event) => {
 
@@ -29,14 +20,22 @@ if (location.hash.length!==0){
 } else {
     const worker = new Worker("js/share.js");
 
-
-
     text.addEventListener("keypress",sendToWorker)
 
     self.onmessage = function (e) {
       window.copyText = e.data;
       document.getElementById("copy").addEventListener("click", myFunction);
     }
+  }
+
+  function sendToWorker(){debounce(worker.postMessage(text.value),500);}
+
+  function clip() {
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied!";
   }
 
   function debounce (fn, delay) {
