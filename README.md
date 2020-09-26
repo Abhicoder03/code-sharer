@@ -1,6 +1,5 @@
-# code-sharer
+<p align ="center"><img alt="code sharer" src="assets/top.png" width="200"></p>
 
+### Credits
 
-Credits
-
-[icon](https://www.flaticon.com/authors/phatplus)
+[Icon from phatplus](https://www.flaticon.com/authors/phatplus)
