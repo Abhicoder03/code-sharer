@@ -1,0 +1,26 @@
+{
+  "name": "codetxt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "pa11y ./index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genderev/codetxt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/genderev/codetxt/issues"
+  },
+  "homepage": "https://github.com/genderev/codetxt#readme",
+  "devDependencies": {
+    "@testing-library/dom": "^7.24.3",
+    "pa11y": "^5.3.0",
+    "stylelint": "^13.7.2",
+    "zombie": "^6.1.4",
+    "eslint": "^7.9.0"
+  }
+}

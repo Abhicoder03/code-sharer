@@ -84,12 +84,12 @@ main:hover {
 box-shadow: 0 0 20px white;
 border-radius: var(--three);
 }
-h1,h2,h3,p {
+h1,label,h3,p {
 font-family: "Hack";
 margin: 0 auto;
 text-align: center;
 }
-h2 {
+label {
 margin-top: 2px;
 font-size: 1.2em;
 color: lightgrey;
@@ -190,4 +190,9 @@ font-family: -apple-system;
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.center{
+  margin: 0 auto;
+  display: block;
 }
