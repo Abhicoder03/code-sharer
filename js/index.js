@@ -2,17 +2,11 @@
 
 const text = document.getElementById("type");
 
-<<<<<<< Updated upstream
-function sendToWorker(){debounce(worker.postMessage(text.value),500);}
 
-function clip() {
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  var tooltip = document.getElementById("myTooltip");
+
   tooltip.innerHTML = "Copied!"
 }
-=======
+
 HTMLTextAreaElement.prototype.getCaretPosition = function () { //return the caret position of the textarea
     return this.selectionStart;
 };
@@ -77,6 +71,13 @@ if (location.hash.length!==0){
       document.getElementById("copy").addEventListener("click", myFunction);
     }
   }
+
+  function clip() {
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    var tooltip = document.getElementById("myTooltip");
+}
 
   function debounce (fn, delay) {
     var timeoutID = null;
