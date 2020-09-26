@@ -19,17 +19,15 @@ if (location.hash.length!==0){
     };
 } else {
 
-    text.addEventListener("keypress",sendToWorker)
+    const worker = new Worker("js/share.js");
+
+    text.addEventListener("keypress",debounce(worker.postMessage(text.value),500))
 
     worker.onmessage = function (e) {
       window.copyText = e.data;
       document.getElementById("copy").addEventListener("click", myFunction);
     }
   }
-
-  const worker = new Worker("js/share.js");
-
-  function sendToWorker(){debounce(worker.postMessage(text.value),500);}
 
   function clip() {
     copyText.select();
