@@ -6,5 +6,5 @@
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: no-referrer
   Cache-Control: max-age=31536000
-  Permissions-Policy: microphone 'none'; geolocation 'none'
+  Permissions-Policy: geolocation=(), microphone=()
   Content-Security-Policy: script-src 'self'
