@@ -31,7 +31,7 @@ if (location.hash.length!==0){
       window.copyText = e.data;
       document.getElementById("copy").addEventListener("click", myFunction);
     }
-    function myFunction() {
+    function clip() {
       copyText.select();
       copyText.setSelectionRange(0, 99999);
       document.execCommand("copy");
