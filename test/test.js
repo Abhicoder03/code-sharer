@@ -10,7 +10,7 @@ LZMA.compress("string", 9, function(result, error) {
 describe('Lempel-Ziv-Markov algorithm', function () {
   describe('string compression', function () {
     it('should make a string shorter in length', function () {
-    assert.notEqual("string",array)
+    assert.notEqual("string",array);
     });
   });
 });

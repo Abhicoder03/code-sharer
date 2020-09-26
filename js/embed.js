@@ -3,33 +3,31 @@ importScripts("lzma-d.js");
 var BASE64_MARKER = ';base64,';
 var LZMA64_MARKER = ';bxze64,';
 
-function zipToString(data, callback) {
+function zipToString(data) {
   var array = base64ToByteArray(data);
   LZMA.decompress(array, function(result, error) {
     if (!(typeof result === 'string')) result = new Uint8Array(result)
     if (error) console.error(error);
-    callback(result);
   });
 }
 
-function stringToData(string, callback) {
+function stringToData(string) {
   if (!string.length) return callback("");
   var a = new FileReader();
-  a.onload = function(e) { callback(e.target.result.replace()) }
+  // a.onload = function(e) { callback(e.target.result.replace()) }
   a.readAsDataURL(new Blob([string], {encoding:"UTF-8",type:"text/html;charset=UTF-8"}));
 }
 
-function decompressDataURI(dataURI, preamble, callback) {
+function decompressDataURI(dataURI, preamble) {
   var base64Index = dataURI.indexOf(LZMA64_MARKER);
   if (base64Index > 0) {
     var base64 = dataURI.substring(base64Index + LZMA64_MARKER.length);
     zipToString(base64, function(result) {
       stringToData(result, function(data) {
-        if (!data) return callback(undefined);
         self.decoded = (dataURI.substring(0, base64Index) + BASE64_MARKER + (preamble || '') + data.split(',')[1])
       })
     })
-  } 
+  }
 }
 
 function base64ToByteArray(base64) {
