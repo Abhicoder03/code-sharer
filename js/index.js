@@ -62,8 +62,11 @@ const text = document.getElementById("type");
 
      const worker = new Worker("js/share.js");
 
-     text.addEventListener("keypress",setTimeout(function(){worker.postMessage(text.value)}, 3000));
+     text.addEventListener("keypress",send);
 
+     function send(){
+       setTimeout(function(){worker.postMessage(text.value)}, 3000)
+     }
 
      worker.onmessage = function (e) {
        window.copyText = e.data;
