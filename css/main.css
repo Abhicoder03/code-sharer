@@ -91,8 +91,9 @@ text-align: center;
 }
 label {
 margin-top: 2px;
-font-size: 1.2em;
-color: lightgrey;
+font-size: 1.8em;
+color: #fcf4f1;
+max-width: 60%;
 }
 .block::after {
     content: "";
