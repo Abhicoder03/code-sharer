@@ -18,7 +18,6 @@ if (location.hash.length!==0){
       text.innerText(e.data);
     };
 } else {
-    const worker = new Worker("js/share.js");
 
     text.addEventListener("keypress",sendToWorker)
 
@@ -27,6 +26,8 @@ if (location.hash.length!==0){
       document.getElementById("copy").addEventListener("click", myFunction);
     }
   }
+
+  const worker = new Worker("js/share.js");
 
   function sendToWorker(){debounce(worker.postMessage(text.value),500);}
 
