@@ -39,8 +39,6 @@ const text = document.getElementById("type");
 
  function clip() {
      navigator.clipboard.writeText(copyText);
-     var tooltip = document.getElementById("myTooltip");
-     tooltip.innerHTML = "Copied!";
  }
 
 
