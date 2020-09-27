@@ -35,4 +35,4 @@ Code Sharer abides by <a href="https://www.contributor-covenant.org/version/1/4/
 This project uses the <a href="https://github.com/genderev/code-sharer/blob/master/LICENSE.md">MIT license</a>.
 
 <h3> Credit </h3>
-<a href="https://www.flaticon.com/authors/phatplus">(icon source)</a>
+<a href="https://www.flaticon.com/authors/phatplus">icon</a>
