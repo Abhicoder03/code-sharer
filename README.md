@@ -28,7 +28,7 @@ Alternatively, follow these steps:
 <li> Create the pull request. </li>
 </ol>
 
-
+Code Sharer abides by <a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct/">Contributer Covenant's Code Of Conduct.</a>
 
 <h3> License </h3>
 
