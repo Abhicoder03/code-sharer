@@ -27,24 +27,6 @@ have to spend time on it.
 
 # How to create a PR
 
-## License
-
-Any contributions you make will be under the MIT Software License. In short,
-when you submit code changes, your submissions are understood to be under the
-same [MIT License](./LICENSE) that covers the project. Feel free to contact the maintainers
-if that's a concern.
-
-## Rules
-
-We strongly recommend to first open an issue discussing the contribution before
-creating a PR, unless you are really sure that the contribution does not need
-discussion (e. g. fixing a typo in documentation).
-
-We expect every contributor to adhere to our
-[Code of Conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct/).
-
-## Set up instructions
-
 First please [fork this repository](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
 to be able to contribute any changes.
 
