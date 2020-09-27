@@ -54,7 +54,7 @@ const text = document.getElementById("type");
    }
 
      work.onmessage = function (e){
-       text.innerText(e.data);
+       text.value = e.data;
      };
  } else {
 
