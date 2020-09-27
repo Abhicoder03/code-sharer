@@ -52,4 +52,4 @@ are meant specifically to get started in the repository.
 
 If you are stuck at any point, feel free to comment in the issue you chose. We
 try to be as helpful to newcomers as possible and you don't have to be afraid of
-dumb questions.
+bad questions. There are no bad questions!
