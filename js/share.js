@@ -11,21 +11,8 @@ console.log(e.data)
     if (error) console.error(error);
     const base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(result)));
     self.postMessage(self.location.origin + "/#" + base64String);
-    console.log(base64String)
+    console.log(base64String);
   });
 
-
-
-// to base64
-// const conv = atob(lz)
-
-// construct url from base64
-
-// const link = self.location.origin + "#" + conv
-//
-// console.log(link)
-// console.log(typeof link)
-
-// self.postMessage(link)
 
 }

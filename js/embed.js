@@ -22,7 +22,7 @@ const array = base64ToByteArray(e.data.replace("#",""))
    if (!(typeof result === 'string')) result = new Uint8Array(result);
    if (error) console.error(error);
    console.log("Decoded result is:" + result);
-   self.postMessage(result)
+   self.postMessage(result);
  });
 
 
