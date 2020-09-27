@@ -15,8 +15,12 @@
 </ul>
 
 <h2> Contributing to Code Sharer for Hacktoberfest </h2>
-<!--- If your README is long or you have some specific process or steps you want contributors to follow, consider creating a separate CONTRIBUTING.md file--->
-To contribute to Code Sharer, follow these steps:
+
+Look at the <a href="https://github.com/genderev/code-sharer/issues">open issues</a>! There are issues tagged with "hacktoberfest" that make it easy for you to get started contributing.
+
+Another option is to open this repo in Gitpod and start editing:
+
+Alternatively, follow these steps:
 
 <ol>
 <li> Fork this repository. </li>
@@ -25,7 +29,7 @@ To contribute to Code Sharer, follow these steps:
 <li> Push to the original branch: <code>git push origin <project_name>/<location></code> </li>
 <li> Create the pull request. </li>
 </ol>
-Alternatively see the GitHub documentation <a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request">on creating a pull request</a>.
+
 
 
 <h3> License </h3>
