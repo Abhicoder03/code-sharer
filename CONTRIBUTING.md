@@ -44,7 +44,7 @@ e. g. `fix_typo_in_documentation`, and start coding.
 ## Your First Contribution 💫
 
 If you are interested in contributing, but don't have a specific issue at heart,
-we would recommend looking through the issues labelled "help wanted".
+we would recommend looking through the issues labelled ["help wanted"](https://github.com/genderev/code-sharer/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
 
 If you are new to contributing to open source, we recommend to have a look at
 a [free tutorial](http://makeapullrequest.com/) for this. Issues labelled "good first issue"
