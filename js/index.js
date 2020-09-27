@@ -15,6 +15,7 @@ const text = document.getElementById("type");
      } else {
          return true;
      }
+
  };
  HTMLTextAreaElement.prototype.getSelectedText = function () { //return the selection text
      return this.value.substring(this.selectionStart, this.selectionEnd);
