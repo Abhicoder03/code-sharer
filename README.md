@@ -9,7 +9,7 @@
 
 <p>To use Code Sharer, follow these steps:</p>
 <ul>
-<li> Visit the <a href="https://codesharer.netlify.app">site</a>. <li>
+<li> Visit the <a href="https://codesharer.netlify.app">site</a>. </li>
 <li> Type your code snippet into the given text box. </li>
 <li> When you're done, click the share button and the share link will be copied to your clipboard! </li>
 </ul>
