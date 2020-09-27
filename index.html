@@ -45,5 +45,15 @@ navigator.serviceWorker.register('./sw-test/sw.js', {scope: './sw-test/'})
 <br><button id="copy" class="center block edit" onclick="clip()">copy embed link</button>
 <br><br><a class="edit" href="https://github.com/genderev/code-sharer"><img class="center" alt="Github Logo" src="images/github.png"><br><br>
 <script src="js/index.js"></script>
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "Organization",
+  "name": "Code Sharer",
+  "url": "https://codesharer.netlify.app/",
+  "logo": "https://codesharer.netlify.app/images/logo.png",
+  "description": "Share colorful snippets of code that others can copy and paste. "
+}
+</script>
 </body>
 </html>
