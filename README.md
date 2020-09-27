@@ -18,8 +18,6 @@
 
 Look at the <a href="https://github.com/genderev/code-sharer/issues">open issues</a>! There are issues tagged with "hacktoberfest" that make it easy for you to get started contributing.
 
-Another option is to open this repo in Gitpod and start editing:
-
 Alternatively, follow these steps:
 
 <ol>
