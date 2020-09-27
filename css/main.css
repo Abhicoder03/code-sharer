@@ -74,7 +74,7 @@ textarea:focus{
   outline: #F7BB97;
 }
 textarea::selection{
-  background-color: darkred;
+  background-color: darkblue;
   -webkit-background-clip: none;
   -moz-background-clip: none;
   -webkit-text-fill-color: ivory;
